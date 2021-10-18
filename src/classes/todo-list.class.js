@@ -17,7 +17,6 @@ export class TodoList {
     }
 
     eliminarTodo( id ){
-
         this.todos = this.todos.filter( todo => todo.id != id );
         this.guardarLocalStorage();
         
@@ -30,7 +29,7 @@ export class TodoList {
             if ( todo.id == id) {
 
                 todo.completado = !todo.completado; 
-                this.guardarLocalStorage();   
+                this.guardarLocalStorage();  
                 break;
 
             }
@@ -59,4 +58,13 @@ export class TodoList {
         
         this.todos = this.todos.map( Todo.fromJson )    
     }
+
+    sumarPendientes ( ){
+        console.log( 'Completados', this.todos.completado);
+        return this.todos.completado;
+    }
+
+
 }
+
+
